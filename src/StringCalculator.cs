@@ -7,10 +7,10 @@ namespace TDD.Takas
         public int Add(string input)
         {
             var total = 0;
-            
+
             var parser = new InputParser();
             parser.Input = input;
-            
+
             string negatives = string.Empty;
 
             if (string.IsNullOrEmpty(input))

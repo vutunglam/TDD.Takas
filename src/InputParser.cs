@@ -10,9 +10,9 @@ namespace TDD.Takas
 
         public string Input
         {
-            get 
-            { 
-                return input; 
+            get
+            {
+                return input;
             }
             set
             {
@@ -21,8 +21,8 @@ namespace TDD.Takas
             }
         }
 
-        public string[] Delimiters 
-        { 
+        public string[] Delimiters
+        {
             get
             {
                 return delimeters;
@@ -30,11 +30,11 @@ namespace TDD.Takas
             private set
             {
                 delimeters = value;
-            } 
+            }
         }
 
-        public int[] Numbers 
-        { 
+        public int[] Numbers
+        {
             get
             {
                 return numbers;
@@ -42,43 +42,43 @@ namespace TDD.Takas
             private set
             {
                 numbers = value;
-            } 
+            }
         }
 
         public InputParser()
         {
             input = string.Empty;
-            delimeters = new string[] {",", "\n"};
-            numbers = new int[] {0};
+            delimeters = new string[] { ",", "\n" };
+            numbers = new int[] { 0 };
         }
 
         private void Parse()
         {
             if (string.IsNullOrEmpty(input))
             {
-                delimeters = new string[] {",", "\n"};
-                numbers = new int[] {0};
+                delimeters = new string[] { ",", "\n" };
+                numbers = new int[] { 0 };
 
                 return;
             }
-            
+
             string[] parsedNumbers;
 
             if (HasCustomDelimiter(input))
             {
                 var parsedResult = input.Split('\n');
-                delimeters = new string[] {parsedResult[0]};
+                delimeters = new string[] { parsedResult[0] };
 
                 parsedNumbers = parsedResult[1].Split(parsedResult[0].ToCharArray());
-            } 
+            }
             else
             {
                 parsedNumbers = input.Split(',', '\n');
             }
 
             numbers = new int[parsedNumbers.Length];
-                
-            for(int i=0; i<parsedNumbers.Length; i++)
+
+            for (int i = 0; i < parsedNumbers.Length; i++)
             {
                 numbers[i] = int.Parse(parsedNumbers[i]);
             }
