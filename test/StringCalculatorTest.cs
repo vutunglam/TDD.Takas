@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices.ComTypes;
-using TDD.Takas;
 using Xunit;
 
 namespace TDD.Takas.Tests
