@@ -8,7 +8,6 @@ namespace TDD.Takas
         private string[] delimeters;
         private int[] numbers;
 
-
         public string Input
         {
             get 
